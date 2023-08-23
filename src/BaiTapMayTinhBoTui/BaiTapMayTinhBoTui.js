@@ -10,6 +10,7 @@ export default class BaiTapMayTinhBoTui extends Component {
 
   dis = (val) => {
     let resultInput = document.querySelector('#screen');
+    console.log(val);
 
     if (isNaN(val)) {
       if (val === 'C') {
@@ -23,26 +24,27 @@ export default class BaiTapMayTinhBoTui extends Component {
       }
       if (val === '=') {
         const result = this.perform(this.state.num1, this.state.num2, this.state.operator);
+        // resultInput.value = '';
         resultInput.value = result;
+        console.log(result);
         this.setState({
-          num1: result,
+          num1: '',
           num2: '',
-          operator: '',
+          operator: 'undefined',
         });
       } else {
         this.setState({
           operator: val,
         });
-
       }
     } else {
       if (this.state.operator) {
         this.setState({
-          num2: resultInput.value + val,
+          num1: resultInput.value += val,
         });
       } else {
         this.setState({
-          num1: resultInput.value + val,
+          num2: resultInput.value += val,
         });
       }
     }
@@ -60,7 +62,11 @@ export default class BaiTapMayTinhBoTui extends Component {
       case '*':
         return num1 * num2;
       case '/':
-        return num1 / num2;
+        if (num2 === 0) {
+          return "Division by zero";
+        } else {
+          return num1 / num2;
+        }
       default:
         return;
     }
@@ -92,7 +98,7 @@ export default class BaiTapMayTinhBoTui extends Component {
                 <td value='5' onClick={() => { this.dis('5') }} style={mystyle}>5</td>
                 <td value='6' onClick={() => { this.dis('6') }} style={mystyle}>6</td>
                 <td value='*' onClick={() => { this.dis('*') }} style={mystyle}>*</td>
-                <td value='C' onClick={() => { this.clr() }} style={mystyle}>C</td>
+                <td value='C' onClick={() => { this.dis('C') }} style={mystyle}>C</td>
               </tr>
               <tr>
                 <td value='1' onClick={() => { this.dis('1') }} style={mystyle}>1</td>
