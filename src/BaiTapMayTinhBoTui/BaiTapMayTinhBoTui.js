@@ -2,13 +2,69 @@ import React, { Component } from 'react';
 
 export default class BaiTapMayTinhBoTui extends Component {
 
-  dis = (value) => {
-    document.querySelector('#screen').value += value;
+  state = {
+    num1: '',
+    num2: '',
+    operator: '',
+  };
+
+  dis = (val) => {
+    let resultInput = document.querySelector('#screen');
+
+    if (isNaN(val)) {
+      if (val === 'C') {
+        this.setState({
+          num1: '',
+          num2: '',
+          operator: 'undefined',
+        });
+        resultInput.value = '';
+        return;
+      }
+      if (val === '=') {
+        const result = this.perform(this.state.num1, this.state.num2, this.state.operator);
+        resultInput.value = result;
+        this.setState({
+          num1: result,
+          num2: '',
+          operator: '',
+        });
+      } else {
+        this.setState({
+          operator: val,
+        });
+
+      }
+    } else {
+      if (this.state.operator) {
+        this.setState({
+          num2: resultInput.value + val,
+        });
+      } else {
+        this.setState({
+          num1: resultInput.value + val,
+        });
+      }
+    }
   }
 
-  clr = () => {
-    document.querySelector('#screen').value = "";
-  }
+  perform = (num1, num2, operator) => {
+    num1 = Number(num1);
+    num2 = Number(num2);
+
+    switch (operator) {
+      case '+':
+        return num1 + num2;
+      case '-':
+        return num1 - num2;
+      case '*':
+        return num1 * num2;
+      case '/':
+        return num1 / num2;
+      default:
+        return;
+    }
+  };
 
   render() {
     const mystyle = {
