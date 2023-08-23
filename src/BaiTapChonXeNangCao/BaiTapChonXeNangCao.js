@@ -114,8 +114,8 @@ export default class BaiTapChonXeNangCao extends Component {
                                 className="cloudimage-360"
                                 // id="gurkha-suv"
                                 data-folder={"./images/" + this.state.carCurrent.srcImg}
-                                data-filename-x="civic-{index}.jpg"
-                                data-amount-x="8"></div>
+                                data-filename="civic-{index}.jpg"
+                                data-amount="8"></div>
                             {/* <img style={{ width: '100%' }} src={this.state.carColor.img} /> */}
                             <div id='appendScrips'></div>
                         </div>
