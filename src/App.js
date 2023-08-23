@@ -25,8 +25,8 @@ function App() {
       {/* <RenderWithLoop/> */}
       {/* <BaiTapRenderFilms/> */}
       {/* <BaiTapThuKinh/> */}
-      <BaiTapChonXeNangCao/>
-      {/* <BaiTapMayTinhBoTui/> */}
+      {/* <BaiTapChonXeNangCao/> */}
+      <BaiTapMayTinhBoTui/>
     </div>
   );
 }
