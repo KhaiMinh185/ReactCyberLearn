@@ -4,7 +4,6 @@ export default class BaiTapMayTinhBoTui extends Component {
 
   dis = (value) => {
     document.querySelector('#screen').value += value;
-    
   }
 
   clr = () => {
