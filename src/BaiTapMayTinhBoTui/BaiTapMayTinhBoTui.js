@@ -52,21 +52,21 @@ export default class BaiTapMayTinhBoTui extends Component {
                 <td name="7" onClick={this.dis} style={mystyle}>7</td>
                 <td name="8" onClick={this.dis} style={mystyle}>8</td>
                 <td name="9" onClick={this.dis} style={mystyle}>9</td>
-                <td name="/" onClick={this.dis} style={mystyle}>&divide;</td>
+                <td name="/" onClick={this.dis} style={mystyle}>/</td>
                 <td name="C" onClick={this.dis} style={mystyle}>CE</td>
               </tr>
               <tr>
                 <td name="4" onClick={this.dis} style={mystyle}>4</td>
                 <td name="5" onClick={this.dis} style={mystyle}>5</td>
                 <td name="6" onClick={this.dis} style={mystyle}>6</td>
-                <td name="*" onClick={this.dis} style={mystyle}>&times;</td>
+                <td name="*" onClick={this.dis} style={mystyle}>*</td>
                 <td name="C" onClick={this.clear} style={mystyle}>C</td>
               </tr>
               <tr>
                 <td name="1" onClick={this.dis} style={mystyle}>1</td>
                 <td name="2" onClick={this.dis} style={mystyle}>2</td>
                 <td name="3" onClick={this.dis} style={mystyle}>3</td>
-                <td name="-" onClick={this.dis} style={mystyle}>&ndash;</td>
+                <td name="-" onClick={this.dis} style={mystyle}>-</td>
                 <td name="=" onClick={this.calculator} style={mystyle} rowSpan={2}>=</td>
               </tr>
               <tr>
